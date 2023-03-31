@@ -1,0 +1,22 @@
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let h = Number(input[0].split(' ')[0]);
+
+let m = Number(input[0].split(' ')[1]);
+
+let cook = Number(input[1]);
+
+let hm = h * 60 + m;
+
+total = hm + cook;
+
+totalH = parseInt(total / 60);
+totalM = total % 60;
+
+if(totalH >= 24){
+
+  totalH -=24;
+}
+
+console.log(totalH + " " + totalM);
